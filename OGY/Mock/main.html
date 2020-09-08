@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>大喜利SNS - OGY | メイン</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style type="text/css">
+        .pa{
+            padding-bottom: 15px;
+            margin: auto;
+        }
+        .title{
+            font-size: 20px;
+            padding: 15px;
+            background-color: #e6e6fa;
+        }
+        .post{
+            font-size: 20px;
+            padding: 20px
+        }
+        .detail{
+            font-size: 15px;
+            padding: 3px;
+            text-align: end;
+        }
+        .body{
+            background-color: beige
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+<header>
+    <div class="fixed-top">
+        <div class="p-2 bg-light text-white">
+    <ul class="nav justify-content-center">
+        <div>
+            <a class="navbar-brand mr-0 mr-md-2" href="main.html"><font color=#696969>大喜利SNS 「OGY」</font></a>
+        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="post.html">投稿する！</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="userprof.html"><font color=#696969>""のページ</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html"><font color=#696969>ログアウト</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html"><font color=#696969>管理者のページ</font></a>
+            </li>
+    </ul>
+        </div>
+    </div>
+        
+</header>
+    <div class="container" style="padding-top: 80px">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="main.html">
+                <ul class="nav justify-content-center">
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="1" class="btn btn-outline-info">新しい！</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="2" class="btn btn-outline-warning">トレンド</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="3" class="btn btn-outline-danger">殿堂入り</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="3" class="btn btn-outline-success">いいね！</button>
+                    </li>
+                    </div>
+                </ul>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- ここにforeach -->
+            <div class="col-md-6 offset-md-3" style="margin-bottom: 30px">
+                <div class="border">
+                    <div class="title">
+                        「お題テーブル」から表示
+                    </div>
+                    <div class="post">
+                        「投稿記事テーブル」から表示
+                    </div>
+                    <div class="border-top">
+                        <div class="detail">
+                            <div  class="detail" style="display:inline-flex">
+                        	<div class="row justify-content-right">
+                        		<form action="likedeleteServlet" method="post">
+                            		<button type="submit" value="${user.post_id}" name="like_dl" class="btn btn-success btn-sm pr-1">いいねやめる</button>
+                            	</form>
+                            	<form action="likeServlet" method="post">
+                            		<button type="submit" value="${user.post_id}" name="like" class="btn btn-success btn-sm">いいね</button>
+                            	</form>
+                           </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ここまでforeach -->
+        </div>
+    </div>
+    
+
+</body>
+    
+</html>
+

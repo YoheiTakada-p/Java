@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>大喜利SNS - OGY | 管理者</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style type="text/css">
+        .pa{
+            padding-bottom: 15px;
+            margin: auto;
+        }
+        .title{
+            font-size: 20px;
+            padding: 15px;
+            background-color: #e6e6fa;
+        }
+        .post{
+            font-size: 20px;
+            padding: 20px
+        }
+        .detail{
+            font-size: 15px;
+            padding: 3px;
+            text-align: end;
+        }
+        .form{
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+<header>
+
+    <div class="fixed-top">
+        <div class="p-2 bg-light text-white">
+    <ul class="nav justify-content-center">
+        <div>
+            <a class="navbar-brand mr-0 mr-md-2" href="main.html"><font color=#696969>大喜利SNS 「OGY」</font></a>
+        </div>
+            <li class="nav-item">
+                <a class="nav-link" style="text-align: " href="post.html">投稿する！</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="userprof.html"><font color=#696969>""のページ</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html"><font color=#696969>ログアウト</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html"><font color=#696969>管理者のページ</font></a>
+            </li>
+    </ul>
+        </div>
+    </div>
+        
+</header>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="UserListServlet" method="post">
+                    <div class="form" style="padding-top: 80px">
+                        <p class="form_title">ユーザ覧</p>
+                        <p>
+                            <label for="login_id">ログインID</label><br>
+                            <input type="text" name="loginId" id="login_id" >
+                        </p>
+                        <p>
+                            <label for="user_name">ユーザ名</label><br>
+                            <input type="text" name="name" id="user_name">
+                        </p>
+                        <p>
+                            <input type="submit" value="検索"/>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>  
+<!-- 管理者 -->    
+<div class="col-md-6 offset-md-3">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ログインID</th>
+      <th scope="col">ユーザ名</th>
+      <th scope="col">作成日時</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <c:forEach var="user" items="${userList}" >
+                  <tr>
+                     <td>${user.loginId}</td>
+                     <td>${user.name}</td>
+                     <td>${user.birthDate}</td>
+                       <c:choose>
+                        <c:when test="${userInfo.loginId == 'admin'}">
+                     <td>
+                       <a class="btn btn-primary" href="UserDetailServlet?id=${user.id}">詳細</a>
+                       <a class="btn btn-success" href="UserUpdateServlet?id=${user.id}">更新</a>
+                       <a class="btn btn-danger" href ="UserDeleteServlet?id=${user.id}">削除</a>
+                     </td>
+                        </c:when>
+                        </c:choose>
+                   </tr>
+      </c:forEach>
+  </tbody>
+</table>
+</div>
+<!-- ここまで管理者 -->   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="main.html">
+                <ul class="nav justify-content-center">
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="1" class="btn btn-outline-info">新しい！</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="2" class="btn btn-outline-warning">トレンド</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="3" class="btn btn-outline-danger">殿堂入り</button>
+                    </li>
+                    </div>
+                    <div class="pa">
+                    <li class="nav-item">
+                        <button type="submit" value="3" class="btn btn-outline-success">いいね！</button>
+                    </li>
+                    </div>
+                </ul>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <!-- ここにforeach -->
+            <div class="col-md-6 offset-md-3" style="margin-bottom: 30px">
+                <div class="border">
+                    <div class="title">
+                        「お題テーブル」から表示
+                    </div>
+                    <div class="post">
+                        「投稿記事テーブル」から表示
+                    </div>
+                    <form action="main.html">
+                    <div class="border-top">
+                        <div class="detail"> 
+                            <font color=#696969>作成日12/12/12</font>
+                            <font color=#696969>作成者</font><a class="mr-md-2" href="#"><font color=#696969>「””」</font></a>
+                            <font color=#696969>○○　いいね！　</font>
+                            <button type="submit" value="いいねID" class="btn btn-success btn-sm">いいね</button>
+                            <button type="submit" value="お題ID" class="btn btn-primary btn-sm">私も！</button>
+                            <button type="submit" value="投稿ID" class="btn btn-danger btn-sm">削除</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ここまでforeach -->
+        </div>
+    </div>
+    
+
+</body>
+    
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>大喜利SNS - OGY | ユーザ情報変更</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style type="text/css">
+        .pa{
+            padding-bottom: 15px;
+            margin: auto;
+        }
+        .title{
+            font-size: 20px;
+            padding: 15px;
+            background-color: #e6e6fa;
+        }
+        .post{
+            font-size: 20px;
+            padding: 20px
+        }
+        .detail{
+            font-size: 15px;
+            padding: 3px;
+            text-align: end;
+        }
+        .container{
+            max-width: 500px
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+<header>
+    <div class="fixed-top">
+        <div class="p-2 bg-light text-white">
+    <ul class="nav justify-content-center">
+        <div>
+            <a class="navbar-brand mr-0 mr-md-2" href="main.html"><font color=#696969>大喜利SNS 「OGY」</font></a>
+        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="post.html">投稿する！</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="userprof.html"><font color=#696969>""のページ</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html"><font color=#696969>ログアウト</font></a>
+            </li>
+    </ul>
+        </div>
+    </div>
+        
+</header>
+    <div class="container" style="padding-top: 80px">
+        <!-- プロフィール -->
+        <div style="text-align: center">
+            <h5>ユーザ情報変更</h5>
+        </div>
+        <form>
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">名前</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">パスワード</label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="login_password">
+                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">パスワード確認用</label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="login_password_com">
+                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">ひと言</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="comment">
+                        </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="row">
+            <div class="col-md-4 offset-md-4" style="text-align: center">
+                <div class="border-bottom">
+                    <a href="userprof.html"><font color=#696969>変更する</font></a>
+                </div>               
+            </div>
+        </div>
+    </div>
+
+</body>
+    
+</html>
+

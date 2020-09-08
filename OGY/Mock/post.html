@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>大喜利SNS - OGY | 投稿</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style type="text/css">
+        .pa{
+            padding-bottom: 15px;
+            margin: auto;
+        }
+        .title{
+            font-size: 20px;
+            padding: 15px;
+            background-color: #e6e6fa;
+        }
+        .textareasize{
+            font-size: 20px;
+            padding: 20px
+        }
+        .detail{
+            font-size: 15px;
+            padding: 3px;
+            text-align: end;
+        }
+        .colo{
+            border-radius: 0px 0px 0px 0px;
+            background-color: #e6e6fa;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+<header>
+    <div class="fixed-top">
+        <div class="p-2 bg-light text-white">
+    <ul class="nav justify-content-center">
+        <div>
+            <a class="navbar-brand mr-0 mr-md-2" href="main.html"><font color=#696969>大喜利SNS 「OGY」</font></a>
+        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="post.html">投稿する！</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="userprof.html"><font color=#696969>""のページ</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="main.html"><font color=#696969>ログアウト</font></a>
+            </li>
+    </ul>
+        </div>
+    </div>     
+</header>
+    <div class="container" style="padding-top: 80px">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" style="margin-bottom: 30px">
+                <div class="border">
+                    <form action="main.html">
+                    <select name="title" class="form-control form-control-lg colo">
+                        <option value="1">「お題を選択してください」または「私も！のお題」</option>
+                        <option value="2">「お題テーブル」から選択</option>
+                        <option value="3">１２３４５６７８９０１２３４５６７８９０１２３４</option>
+                        <option value="4">ランダム</option>
+                    </select>
+                    <div class="textareasize">
+                        <div class="form-group">
+                            <textarea class="form-control" name="post" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="textareasize">
+                        <div class="border-top">
+                            <p>次のお題(入力なしでも可)</p>
+                            <div class="form-group">
+                                <textarea class="form-control" name="user_title" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="detail" style="text-align: center"> 
+                            <button type="submit" class="btn btn-primary btn-sm">投稿する</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+    
+</html>
+
